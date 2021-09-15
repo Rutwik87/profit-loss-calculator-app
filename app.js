@@ -6,12 +6,16 @@ const calculateBtn = document.querySelector("#calculate-btn")
 const output = document.querySelector("#output-msg")
 
 function clickHandler(){
-    var costPrice = buyPrice.value;
-    var sellPrice = currentPrice.value; 
-    var profitPerStock = sellPrice - costPrice;
-    var absProfit = computeAbsoluteProfit(profitPerStock,quantity.value);
-    var profitPercent = computeProfitPercent(costPrice,sellPrice);
-    displayOutput(absProfit,profitPercent);
+    if(buyPrice.value === "" || currentPrice.value === "" || buyPrice.value < 0 || currentPrice.value < 0){
+        output.innerText = "Invalid Input!!!"
+    }else{
+        var costPrice = buyPrice.value;
+        var sellPrice = currentPrice.value; 
+        var profitPerStock = sellPrice - costPrice;
+        var absProfit = computeAbsoluteProfit(profitPerStock,quantity.value);
+        var profitPercent = computeProfitPercent(costPrice,sellPrice);
+        displayOutput(absProfit,profitPercent);
+    }
 }
 
 function displayOutput(absProfit,profitPercent){
