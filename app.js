@@ -6,7 +6,7 @@ const calculateBtn = document.querySelector("#calculate-btn")
 const output = document.querySelector("#output-msg")
 
 function clickHandler(){
-    if(buyPrice.value === "" || currentPrice.value === "" || buyPrice.value < 0 || currentPrice.value < 0){
+    if(buyPrice.value === "" || currentPrice.value === "" || buyPrice.value < 0 || currentPrice.value < 0 || quantity.value < 0){
         output.innerText = "Invalid Input!!!"
     }else{
         var costPrice = buyPrice.value;
